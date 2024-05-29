@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+% \usepackage[dvipnames]{xcolor}
+% \usepackage[colorlinks=true,urlcolor=ForestGreen]{hyperref}
+% \usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+% \usepackage{fontspec}
+% \defaultfontfeatures{Mapping=tex-text,Scale=MatchLower}
+% \setmainfont{JetBrainsMono\ Nerd\ Font}
+% \setmonofont{JetBrainsMono\ Nerd\ Font}
+% \fontencoding{T1}
+% \fontfamily{Pretendard}
+% \fontseries{m}
+% \fontshape{it}
+% \fontsize{12}{15}
+% \selectfont
+
+\title{Functions in {\LaTeX}}
+\author{Logosevens}
+
+
+% set fonts
+
+
+% create macros
+\newcommand{\uga}{University of Georgia}
+\newcommand{\ua}{University of Arzona}
+
+% create functions
+\newcommand{\entry}[4]{
+  \begin{minipage}[t]{.15\textwidth}
+    \hfill \textsc{#1}
+  \end{minipage}
+  \hfill\vline\hfill
+  \begin{minipage}[t]{.80\textwidth}
+    #2
+
+    \textit{#3}
+
+    \footnotesize{#4}
+  \end{minipage}\\\vspace{.25cm}
+}
+
+\begin{document}
+\maketitle
+
+\entry{2014--2016}{``Graduate Student Mentor''}{\uga}{Took the newkinds out on some hot dates.}
+
+\entry{2014--2016}{``Graduate Student Mentor''}{\uga}{Took the newkinds out on some hot dates.}
+
+\entry{2014--2016}{``Graduate Student Mentor''}{\uga}{Took the newkinds out on some hot dates.}
+   
+\end{document}

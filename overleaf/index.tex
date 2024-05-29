@@ -1,0 +1,412 @@
+\documentclass{article}
+
+% devide the document into sections
+\usepackage{titlesec}
+% change default title format
+\usepackage{titling}
+% change default margin
+\usepackage[margin=0.5in]{geometry}
+% For math symbols
+\usepackage{amsfonts}
+% For math equations
+\usepackage{amsmath}
+% For math symbols
+\usepackage{amssymb}
+% Skip paragraphs
+\usepackage{parskip}
+% For multiline tables
+\usepackage{multirow}
+% For long length tables
+\usepackage{float}
+
+\titleformat{\section}
+{\huge\bfseries}
+{\vspace{1em}}
+{0em}
+{}
+
+\titleformat{\subsection}
+{\Large\bfseries}
+{\hspace{-.1em}$\bullet$ }
+{0em}
+{}[\titlerule]
+
+\titleformat{\subsubsection}
+{\large\bfseries}
+{\hspace{-0.5em}- }
+{0em}
+{}[]
+
+\titlespacing{\subsubsection}
+{1em}{1.25em}{0.5em}
+
+\renewcommand{\maketitle}{
+ \begin{center}
+  {\Huge\bfseries \LaTeX}
+  \vspace{1em}
+
+  {\large\bfseries\theauthor}
+  \vspace{1em}
+
+  gutmutcode@gmail.com --- https://github.com/gutmutcode
+
+ \end{center}
+}
+%=============================================================================
+% set up the document
+%=============================================================================
+\begin{document}
+
+\title{A quick guide to {\LaTeX}}
+\author{GC}
+
+\maketitle
+\tableofcontents
+
+\section{Definition}
+
+\subsection{What is a {\LaTeX}?}
+
+A mathemetics typesetting program that is the standard for most professional mathematics writing. This is based on typesetting program TEX created by Donald Knuth of Stanford Uniuversity. Leslie Lamport was responsible for create {\LaTeX} a more user friendly version of TEX. A team of {\LaTeX} programmers created the current version {\LaTeX} 2$\epsilon$.
+
+\section{Purpose}
+
+\subsection{Why use {\LaTeX}?}
+
+In properly typeset mathematics variables appear in italics (e.g., $f(x) = x^2 + 2x - 3$). The exception to this rule is predefined functions (e.g.$\sin(x)$). It is important to always threat text, variables, and functions correctly. There are two ways to present mathematical expression inline or equation.
+
+\section{Usages}
+
+\subsection{Math vs. text vs. function}
+
+\subsubsection{Inline}
+Inline expressions occur in the middle of a sentence. To produce an inline expression, place the math expression between dollar signs (\$). For example, typing \textbf{\$90\textasciicircum\{\textbackslash circ\}\$} is the same as \textbf{\$\textbackslash frac\{\textbackslash pi\}\{2\}\$ radians} yields $90^{\circ}$ is the same as $\frac{\pi}{2}$
+
+\subsubsection{Equation}
+Equations are mathmetical expressions that are given their own line and are centered on the page. These are usually used for important equations that deserve to be showcased on their own line of for large equations that cannot fit inline. To produce an inline expression, place the mathematical expression between the symbols \textbackslash[ and \textbackslash]. Typing \textbf{\textbackslash[x=\textbackslash frac\{-b\textbackslash pm\textbackslash sqrt\{b\textasciicircum2-4ac\}\}\{2a\}\textbackslash]} yields \[x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.\]
+
+% \begin{equation}
+% f(x) = x^2 + 2x - 3
+% \end{equation}
+
+\subsubsection{Displaystyle}
+To get full-sized inline mathematical expressions use \textbf{\textbackslash displaystyle}. 
+Use this sparingly. 
+Typing \textbf{I want this \$\textbackslash displaystyle \textbackslash sum\_\{n=1\}\textasciicircum\{\textbackslash infty\}\textbackslash frac\{1\}\{n\}\$, not this \$\textbackslash sum\_\{n=1\}\textasciicircum\{\textbackslash infty\}\textbackslash frac\{1\}\{n\}\$}. 
+yields\\
+
+I want this $\displaystyle \sum_{n=1}^\infty \frac{1}{n}$, not this $\sum_{n=1}^\infty \frac{1}{n}$
+
+\subsection{Images}
+You can put images (pdf, png, jpe, or gif) in your document. 
+They need to be in the same location as your .tex file when you compile the document. 
+Omit \textbf{[width=.5in]} if you want the image to be full-sized.
+\vspace{1em}
+
+\textbf{\textbackslash begin\{figure\}[ht]}
+
+\textbf{\textbackslash includegraphics[width=.5in]\{imagename.jpg\}}
+
+\textbf{\textbackslash caption\{The (optional) caption goes here.\}}
+
+\textbf{\textbackslash end\{figure\}}
+
+\subsection{Text decorations}
+Your text can be \textit{italics} (\textbackslash textit\{italics\}), \textbf{boldface} (\textbackslash textbf\{boldface\}), \underline{underline} (\textbackslash underline\{underline\}),or \texttt{typewriter} (\textbackslash texttt\{typewriter\}).
+
+Your math can contain boldface, $\mathbf{R}$ (\textbackslash mathbf\{R\}), or blackboard bold, $\mathbb{R}$ (\textbackslash mathbb\{R\}).
+You may want to used these to express the sets of real numbers ($\mathbb{R}$ or $\mathbf{R}$), integers ($\mathbb{Z}$ or $\mathbf{Z}$), rational numbers ($\mathbb{Q}$ or $\mathbf{Q}$), and natural numbers ($\mathbb{N}$ or $\mathbf{N}$).
+
+To have text appear in a math expression use \textbf{\textbackslash text\{text\}}.
+
+\textbf{(0,1]=\{x\textbackslash in\textbackslash mathbb\{R\}:x\textgreater0\textbackslash text\{ and \}x\textbackslash le 1\}} yields
+
+$(0,1]=\{x\in\mathbb{R}:x>0\text{ and }x\le 1\}$. 
+(Without the \textbf{\textbackslash text} command it treats "and" as three variables: $(0,1]=\{x\in\mathbb{R}:x>0 and y\le 1\}$) 
+
+\subsection{Spaces and new lines}
+{\LaTeX} ignores extra spaces and new lines. For example,
+
+\textbf{This    sentence will        look
+fine after      it is      compiled}
+
+This sentence will look fine after it is compiled.
+Leave one full empty line between two paragraphs.
+Place \textbackslash\textbackslash\ at the end of a line to create a new line (but not create a new paragraph).\\
+\textbf{This\\compiles}
+
+\textbf{like\textbackslash\textbackslash\\this.}\\This compiles\\like\\this.\\
+Use \textbf{\textbackslash noindent} to prevent a paragraph from indenting.
+
+\subsection{Comments}
+Use \textbf{\%} to create a comment.
+Nothing on the line after the \textbf{\%} will be typeset.
+\textbf{\$f(x)=\textbackslash sin(x)\$ \%this is the sine function}\\yields
+$f(x)=\sin(x)$
+
+\subsection{Delimiters}
+description command output\\
+parentheses (x) (x)\\
+brackets [x] [x]\\
+curly braces \textbackslash\{x\textbackslash\} \{x\}\\
+To make your delimiters large enough to fit the content, use them together with \textbf{\textbackslash right} and \textbf{\textbackslash left}.
+For example, \textbf{\textbackslash left\textbackslash\{\textbackslash sin\textbackslash left(\textbackslash frac\{1\}\{n\}\textbackslash right)
+\textbackslash right\textbackslash\}\_\{n\}\textasciicircum\{\textbackslash infty\}} produces
+
+$\left\{\sin\left(\frac{1}{n}\right)\right\}_{n}^{\infty}$, differ to 
+$\{\sin(\frac{1}{n})\}_{n}^{\infty}$.
+
+Currly braces are non-priting characters that are used to gather text that has more than one character.
+Observe the differences between the four expressions \textbf{x\textasciicircum2, x\textasciicircum\{2\}, x\textasciicircum2t, x\textasciicircum\{2t\}}
+when typeset: $x^2, x^{2}, x^2t, x^{2t}$
+
+\subsection{Lists}
+You can produce ordered and unordered lists.
+
+\renewcommand{\arraystretch}{1.1}
+% [!tbhp] set table position ( !force, top, bottom, here on page or separated page )
+\begin{table}[ht]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  \multirow{5}{*}{unordered list}
+              &\textbackslash begin\{itemsize\}\\
+              &\quad\textbackslash item\\
+              &\quad Thing 1 &$\bullet$ Thing 1\\
+              &\quad\textbackslash item &$\bullet$ Thing 2\\
+              &\quad Thing 2 &\\
+              &\textbackslash end\{itemsize\}&\vspace{1em}\\
+  \multirow{5}{*}{ordered list}
+              &\textbackslash begin\{enumerate\}\\
+              &\quad\textbackslash item\\
+              &\quad Thing 1 &$\bullet$ Thing 1\\
+              &\quad\textbackslash item &$\bullet$ Thing 2\\
+              &\quad Thing 2 &\\
+              &\textbackslash end\{enumerate\}\\
+ \end{tabular}
+\end{table}
+
+\subsection{Symbols (in \textit{math} mode)}
+% \large{\textbf{The basics}}
+\subsubsection{The basics}
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  addition &\textbf{+} &$+$\\
+  subtraction &\textbf{-} &$-$\\
+  plus or minus &\textbf{\textbackslash pm} &$\pm$\\
+  multiplication (times) &\textbf{\textbackslash times} &$\times$\\
+  multiplication (dot) &\textbf{\textbackslash cdot} &$\cdot$\\
+  division symbol &\textbf{\textbackslash div} &$\div$\\
+  division (slash) &\textbf{/} &$/$\\
+  circle plus &\textbf{\textbackslash oplus} &$\oplus$\\
+  circle times &\textbf{\textbackslash otimes} &$\otimes$\\
+  equal &\textbf{=} &$=$\\
+  not equal &\textbf{\textbackslash ne} &$\ne$\\
+  less than &\textbf{\textless} &$<$\\
+  greater than &\textbf{\textgreater} &$>$\\
+  less than or equal to &\textbf{\textbackslash le} &$\le$\\
+  greater than or equal to &\textbf{\textbackslash ge} &$\ge$\\
+  approximately equal to &\textbf{\textbackslash approx} &$\approx$\\
+  infinity &\textbf{\textbackslash infty} &$\infty$\\
+  dots &\textbf{1,2,3,\textbackslash ldots} &$1,2,3,\ldots$\\
+  dots &\textbf{1+2+3+\textbackslash cdots} &$1+2+3+\cdots$\\
+  fraction &\textbf{\textbackslash frac\{a\}\{b\}} &$\frac{a}{b}$\\
+  square root &\textbf{\textbackslash sqrt\{x\}} &$\sqrt{x}$\\
+  nth root &\textbf{\textbackslash sqrt[n]\{x\}} &$\sqrt[n]{x}$\\
+  exponentiation &\textbf{a\textasciicircum b} &$a^b$\\
+  subscript &\textbf{a\_b} &$a_b$\\
+  absolute value &\textbf{\textbar x\textbar} &$|x|$\\
+  natural log &\textbf{\textbackslash ln(x)} &$\ln(x)$\\
+  logarithm &\textbf{\textbackslash log\_\{a\}b} &$\log_{a}b$\\
+  exponential function &\textbf{e\textasciicircum x=\textbackslash exp(x)} &$e^x=\exp(x)$\\
+  degree &\textbf{\textbackslash deg(f)} &$\deg(f)$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Functions}
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  maps to &\textbf{\textbackslash to} &$\to$\\
+  composition &\textbf{\textbackslash circ} &$\circ$\\
+  piecewise &\textbf{\textbar x\textbar=} &\\
+  function &\textbf{\textbackslash begin\{cases\}} &\multirow{4}{*}{$|x|=\begin{cases}x&x\ge0\\-x&x<0\end{cases}$}\\
+           &\textbf{x \& x\textbackslash ge 0\textbackslash\textbackslash} &\\
+           &\textbf{-x \& x\textless0} &\\
+           &\textbf{\textbackslash end\{cases\}} &\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Greek and Hebrew letters}
+
+\begin{table}[H]
+ \begin{tabular}{llll}
+  \textit{description} &\textit{output} &\textit{command} &\textit{output}\\
+  \textbf{\textbackslash alpha} &$\alpha$ &\textbf{\textbackslash tau} &$\tau$\\
+  \textbf{\textbackslash beta} &$\beta$ &\textbf{\textbackslash theta} &$\theta$\\
+  \textbf{\textbackslash chi} &$\chi$ &\textbf{\textbackslash upsilon} &$\upsilon$\\
+  \textbf{\textbackslash delta} &$\delta$ &\textbf{\textbackslash xi} &$\xi$\\
+  \textbf{\textbackslash epsilon} &$\epsilon$ &\textbf{\textbackslash zeta} &$\zeta$\\
+  \textbf{\textbackslash varepsilon} &$\varepsilon$ &\textbf{\textbackslash Delta} &$\Delta$\\
+  \textbf{\textbackslash eta} &$\eta$ &\textbf{\textbackslash Gamma} &$\Gamma$\\
+  \textbf{\textbackslash gamma} &$\gamma$ &\textbf{\textbackslash Lambda} &$\Lambda$\\
+  \textbf{\textbackslash iota} &$\iota$ &\textbf{\textbackslash Omega} &$\Omega$\\
+  \textbf{\textbackslash kappa} &$\kappa$ &\textbf{\textbackslash Phi} &$\Phi$\\
+  \textbf{\textbackslash lambda} &$\lambda$ &\textbf{\textbackslash Pi} &$\Pi$\\
+  \textbf{\textbackslash mu} &$\mu$ &\textbf{\textbackslash Psi} &$\Psi$\\
+  \textbf{\textbackslash nu} &$\nu$ &\textbf{\textbackslash Sigma} &$\Sigma$\\
+  \textbf{\textbackslash omega} &$\omega$ &\textbf{\textbackslash Theta} &$\Theta$\\
+  \textbf{\textbackslash phi} &$\phi$ &\textbf{\textbackslash Upsilon} &$\Upsilon$\\
+  \textbf{\textbackslash varphi} &$\varphi$ &\textbf{\textbackslash Xi} &$\Xi$\\
+  \textbf{\textbackslash pi} &$\pi$ &\textbf{\textbackslash aleph} &$\aleph$\\
+  \textbf{\textbackslash psi} &$\psi$ &\textbf{\textbackslash beth} &$\beth$\\
+  \textbf{\textbackslash rho} &$\rho$ &\textbf{\textbackslash daleth} &$\daleth$\\
+  \textbf{\textbackslash sigma} &$\sigma$ &\textbf{\textbackslash gimel} &$\gimel$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Set theory}
+
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  set brackets &\textbf{\textbackslash \{1,2,3\}} &${1,2,3}$\\
+  element of &\textbf{\textbackslash in} &$\in$\\
+  not an element of &\textbf{\textbackslash not\textbackslash in} &$\not\in$\\
+  subset of &\textbf{\textbackslash subset} &$\subset$\\
+  subset of &\textbf{\textbackslash subseteq} &$\subseteq$\\
+  not a subset of &\textbf{\textbackslash not\textbackslash subset} &$\not\subset$\\
+  contains &\textbf{\textbackslash supset} &$\supset$\\
+  contains &\textbf{\textbackslash supseteq} &$\supseteq$\\
+  union &\textbf{\textbackslash cup} &$\cup$\\
+  intersection &\textbf{\textbackslash cap} &$\cap$\\
+  big union &\textbf{\textbackslash bigcup\_\{n=1\}\textasciicircum\{10\}A\_n} &$\bigcup_{n=1}^{10}A_n$\\
+  big intersection &\textbf{\textbackslash bigcap\_\{n=1\}\textasciicircum\{10\}A\_n} &$\bigcap_{n=1}^{10}A_n$\\
+  empty set &\textbf{\textbackslash emptyset} &$\emptyset$\\
+  power set &\textbf{\textbackslash mathcal\{P\}} &$\mathcal{P}$\\
+  minimum &\textbf{\textbackslash min} &$\min$\\
+  maximum &\textbf{\textbackslash max} &$\max$\\
+  supremum &\textbf{\textbackslash sup} &$\sup$\\
+  infimum &\textbf{\textbackslash inf} &$\inf$\\
+  limit superior &\textbf{\textbackslash limsup} &$\limsup$\\
+  limit inferior &\textbf{\textbackslash liminf} &$\liminf$\\
+  closure &\textbf{\textbackslash overline{A}} &$\overline{A}$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Calculus}
+
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  derivative &\textbf{\textbackslash frac\{df\}\{dx\}} &$\frac{df}{dx}$\\
+  derivative &\textbf{f'} &$f'$\\
+  partial derivative &\textbf{\textbackslash frac\{\textbackslash partial f\}\{\textbackslash partial x\}} &$\frac{\partial f}{\partial x}$\\
+  integral &\textbf{\textbackslash int} &$\int$\\
+  double integral &\textbf{\textbackslash iint} &$\iint$\\
+  triple integral &\textbf{\textbackslash iiint} &$\iiint$\\
+  limits &\textbf{\textbackslash lim\_\{x\textbackslash to \textbackslash infty\}} &$\displaystyle \lim_{x\to \infty}$\\
+  summation &\textbf{\textbackslash sum\_\{n=1\}\textasciicircum\{\textbackslash infty\}a\_n} &$\displaystyle \sum_{n=1}^{\infty}a_n$\\
+  product &\textbf{\textbackslash prod\_\{n=1\}\textasciicircum\{\textbackslash infty\}a\_n} &$\displaystyle \prod_{n=1}^{\infty}a_n$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Logic}
+
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  not &\textbf{\textbackslash neg} &$\neg$\\
+  and &\textbf{\textbackslash land} &$\land$\\
+  or &\textbf{\textbackslash lor} &$\lor$\\
+  if...then &\textbf{\textbackslash implies} &$\implies$\\
+  if and only if &\textbf{\textbackslash iff} &$\iff$\\
+  logical equivalence &\textbf{\textbackslash equiv} &$\equiv$\\
+  therefore &\textbf{\textbackslash therefore} &$\therefore$\\
+  there exists &\textbf{\textbackslash exists} &$\exists$\\
+  for all &\textbf{\textbackslash forall} &$\forall$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Linear algebra}
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  vector &\textbf{\textbackslash vec\{v\}} &$\vec{v}$\\
+  vector &\textbf{\textbackslash mathbf\{v\}} &$\mathbf{v}$\\
+  norm &\textbf{\textbar\textbar\textbackslash vec\{v\}\textbar\textbar} &$||\vec{v}||$\\
+  \multirow{7}{*}{matrix} &\textbf{\textbackslash left[} &\\
+                          &\textbf{\textbackslash begin\{array\}\{ccc\}} &\\
+                          &\textbf{1 \& 2 \& 3 \textbackslash\textbackslash} &\multirow{3}{*}{$\left[\begin{array}{ccc}1&2&3 \\4&5&6\\7&8&0\end{array}\right]$}\\
+                          &\textbf{4 \& 5 \& 6 \textbackslash\textbackslash} &\\
+                          &\textbf{7 \& 8 \& 0} &\\
+                          &\textbf{\textbackslash end\{array\}} &\\
+                          &\textbf{\textbackslash right]} &\vspace{0.5cm}\\
+  \multirow{7}{*}{determinant} &\textbf{\textbackslash left\textbar} &\\
+                          &\textbf{\textbackslash begin\{array\}\{ccc\}} &\\
+                          &\textbf{1 \& 2 \& 3 \textbackslash\textbackslash} &\multirow{3}{*}{$\left|\begin{array}{ccc}1&2&3 \\4&5&6\\7&8&0\end{array}\right|$}\\
+                          &\textbf{4 \& 5 \& 6 \textbackslash\textbackslash} &\\
+                          &\textbf{7 \& 8 \& 0} &\\
+                          &\textbf{\textbackslash end\{array\}} &\\
+                          &\textbf{\textbackslash right\textbar} &\vspace{0.5cm}\\
+  determinant &\textbf{\textbackslash det(A)} &$\det(A)$\\
+  trace &\textbf{\textbackslash operatorname\{tr\}(A)} &$\operatorname{tr}(A)$\\
+  dimension &\textbf{\textbackslash dim(V)} &$\dim(V)$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Number theory}
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  devides &\textbf{\textbar} &$|$\\
+  does not devide &\textbf{\textbackslash not\textbar} &$\not|$\\
+  div &\textbf{\textbackslash dv} &$\div$\\
+  mod &\textbf{\textbackslash mod} &$\mod$\\
+  greatest common divisor &\textbf{\textbackslash gcd} &$\gcd$\\
+  ceiling &\textbf{\textbackslash lceil x \textbackslash rceil} &$\lceil x \rceil$\\
+  floor &\textbf{\textbackslash lfloor x \textbackslash rfloor} &$\lfloor x \rfloor$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Geometry and trigonometry}
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  angle &\textbf{\textbackslash angle ABC} &$\angle ABC$\\
+  degree &\textbf{90\textasciicircum\{\textbackslash circ\}} &$90^{\circ}$\\
+  triangle &\textbf{\textbackslash triangle ABC} &$\triangle ABC$\\
+  segment &\textbf{\textbackslash overline\{AB\}} &$\overline{AB}$\\
+  sine &\textbf{\textbackslash sin} &$\sin$\\
+  cosine &\textbf{\textbackslash cos} &$\cos$\\
+  tangent &\textbf{\textbackslash tan} &$\tan$\\
+  cotangent &\textbf{\textbackslash cot} &$\cot$\\
+  secant &\textbf{\textbackslash sec} &$\sec$\\
+  cosecant &\textbf{\textbackslash csc} &$\csc$\\
+  inverse sine &\textbf{\textbackslash arcsin} &$\arcsin$\\
+  inverse cosine &\textbf{\textbackslash arccos} &$\arccos$\\
+  inverse tangent &\textbf{\textbackslash arctan} &$\arctan$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Symbols (in \textit{text} mode)}
+The following symbols do \textbf{not} have to be surrounded by dollar signs
+\begin{table}[H]
+ \begin{tabular}{lll}
+  \textit{description} &\textit{command} &\textit{output}\\
+  dollar sign &\textbf{\textbackslash \$} &\$\\
+  percent &\textbf{\textbackslash \%} &\%\\
+  ampersand &\textbf{\textbackslash \&} &\&\\
+  pound &\textbf{\textbackslash \#} &\#\\
+  backslash &\textbf{\textbackslash textbackslash} &\textbackslash\\
+  left quote marks &\textbf{' '} &''\\
+  right quote marks &\textbf{' '} &''\\
+  single left quote &\textbf{'} &'\\
+  single right quote &\textbf{'} &'\\
+  hyphen &\textbf{X-ray} &X-ray\\
+  en-dash &\textbf{pp. 5- -15} &pp. 5--15\\
+  em-dash &\textbf{Yes- - -or no?} &Yes---or no?\\
+ \end{tabular} 
+\end{table}
+
+\end{document}

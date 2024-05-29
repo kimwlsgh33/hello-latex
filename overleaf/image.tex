@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{wrapfig2}
+
+
+
+\author{Logosevens}
+\title{The Logic of Images and Figure in {\LaTeX}}
+
+\begin{document}
+
+\maketitle
+
+Here is a new document.
+
+\begin{center}
+\includegraphics[width=3in,height=1in, keepaspectratio]{fcpx.png}
+\includegraphics[width=0.25\textwidth, angle=45]{fcpx.png}
+\end{center}
+
+\blindtext
+\blindtext
+\blindtext
+
+In the figure below, you can see the medical effects of emacs.
+
+\blindtext
+
+% [t, b, h, p]
+\begin{figure}[h]
+\centering
+
+\includegraphics[width=0.7\textwidth]{gojo.jpeg}
+
+\caption{Gojo Satoru}
+\end{figure}
+
+\blindtext
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.5\textwidth]{gojo.jpeg}
+\caption{another Gojo?\label{latexpic}}
+\end{wrapfigure}
+
+Please refer to Figure \ref{latexpic}. (This number is auto generated.)
+\blindtext
+\blindtext
+
+In physics, the mass-energy equivalence is stated by the equation $E=mc^2$, discovered in 1905 by Albert Einstein.
+
+\begin{math}
+E=mc^2
+\end{math} is typeset in a paragraph using inline math mode---as is $E=mc^2$, and so too is \(E=mc^2\).
+
+The mass-energy equivalence is described by the famous equation \[ E=mc^2 \] discovered in 1905 by Albert Einstein.
+
+In natural units ($c = 1$), the formula expresses the identity
+\begin{equation}
+E=m
+\end{equation}
+
+Subscripts in math mode are written as $a_b$ and superscripts are written as $a^b$. These can be combinded and nested to write expressions such as
+
+\[ T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q} =
+ T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
+
+ We write integrals using $\int$ and fractions using $\frac{a}{b}$, Limits are placed on integrals using superscripts and subscripts:
+
+ \[ \int_0^1 \frac{dx}{e^x} = \frac{e-1}{e} \]
+
+ Lower case Greek letters are written as $\omega$ $\delta$ etc.
+ while upper case Greek letters are written as $\Omega$ $\Delta$.
+
+ Mathmatical operators are prefixed with a backslash as $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$ etc.
+
+ The well-known Pythagorean theorem \(x^2 + y^2 = z^2\) was proved to be invalid for other exponents, meaning the next equation has no integer solutions for \(n>2\):
+
+ \[ x^n + y^n = z^n \]
+
+ \section{Second example}
+
+ This is a simple math expression \(\sqrt{x^2+1}\) inside text.
+ And this is also the same:
+ \begin{math}
+   \sqrt{x^2+1}
+ \end{math}
+ but by using another command.
+
+   
+\end{document}
